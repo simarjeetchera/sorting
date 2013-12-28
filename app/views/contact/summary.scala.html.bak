@@ -1,0 +1,25 @@
+@(contact: Contact) 
+
+@main(Html("Email Send Sucessfully!"), nav = "contact") {
+    
+    
+    @contact.informations.map { information =>
+
+    <h3>Numbers to be Sorted - </h3>    
+        <h6>@information.label</h6>
+        
+        <h3>Email Id - </h3>
+
+        <h6>
+            @if(information.email == null || information.email == "") {
+                <em>Not specified</em>
+            } else {
+                @information.email
+            }
+        </h6>
+        
+       
+            
+    }
+    
+}
